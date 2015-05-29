@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+  <link rel="shortcut icon" href="http://cdn.freefavicon.com/freefavicons/objects/bowler-hat-and-moustache-152-217368.png" />
+  <title>Introduction to Programming</title>
+</head>
+<body>
+  <h1 id="toc">Table of Contents</h1>
+  <div class="content">
+    <ul class="content-item">
+      <li><a href="#part-1">1. The Basics of the Web</a></li>
+        <ul>
+          <li><a href="#section-1-1">World Wide Web</a></li>
+          <li><a href="#section-1-2">Components of the Web</a></li>
+        </ul>
+    </ul>
+    <ul class="content-item">
+      <li><a href="#part-2">2. HTML</a></li>
+        <ul>
+          <li><a href="#section-2-1">What is HTML?</a></li>
+          <li><a href="#section-2-2">Tags</a></li>
+          <li><a href="#section-2-3">Marking Links</a></li>
+          <li><a href="#section-2-4">Structure</a></li>
+        </ul>
+    </ul>
+    <ul class="content-item">
+      <li><a href="#part-3">3. Creating Structured Documents</a></li>
+          <ul>
+            <li><a href="#section-3-1">First Step</a></li>
+            <li><a href="#section-3-2">HTML-CSS-DOM</a></li>
+            <li><a href="#section-3-3">Boxes, Grids and Rules</a></li>
+          </ul>
+    </ul>
+    <ul class="content-item">
+      <li><a href="#part-4">4. CSS Style and HTML Structure</a></li>
+          <ul>
+            <li><a href="#section-4-1">Adding Style</a></li>
+            <li><a href="#section-4-2">Positioning Boxes</a></li>
+            <li><a href="#section-4-3">Code, Test, Refine</a></li>
+          </ul>
+    </ul>
+    <ul class="content-item">
+      <li><a href="#part-5">5. Programming</a></li>
+          <ul>
+            <li><a href="#section-5-1">What is programming?</a></li>
+            <li><a href="#section-5-2">Why using programming languages?</a></li>
+          </ul>
+    </ul>
+    <ul class="content-item">
+      <li><a href="#part-6">6. Python</a></li>
+          <ul>
+            <li><a href="#section-6-1">Python expressions</a></li>
+            <li><a href="#section-6-2">Variables</a></li>
+            <li><a href="#section-6-3">Strings</a></li>
+            <li><a href="#section-6-4">Procedures/ Functions</a></li>
+            <li><a href="#section-6-5">Making decisions</a></li>
+            <li><a href="#section-6-6">If Statements</a></li>
+            <li><a href="#section-6-7">While loop</a></li>
+            <li><a href="#section-6-8">Debugging</a></li>
+            <li><a href="#section-6-9">Structured data: Lists</a></li>
+            <li><a href="#section-6-10">Aliasing</a></li>
+            <li><a href="#section-6-11">For loop</a></li>
+            <li><a href="#section-6-12">How to solve problems?</a></li>
+          </ul>
+    </ul>
+    <ul class="content-item">
+      <li><a href="#part-7">7. Object Oriented Programing (OOP)</a></li>
+          <ul>
+            <li><a href="#section-7-1">What is OOP?</a></li>
+              <li><a href="#section-7-2">What is a Class?</a></li>
+              <li><a href="#section-7-3">Importing Classes</a></li>
+              <li><a href="#section-7-4">Creating Classes</a></li>
+              <li><a href="#section-7-5">Class variables</a></li>
+              <li><a href="#section-7-6">Predefined class attributes</a></li>
+              <li><a href="#section-7-7">Inheritance</a></li>
+          </ul>
+    </ul>
+    <ul class="content-item">
+      <li><a href="#part-8">8. Dynamic Web Applications</a></li>
+          <ul>
+            <li><a href="#section-8-1">Servers</a></li>
+            <li><a href="#section-8-2">Importance of validating input</a></li>
+            <li><a href="#section-8-3">HTML templates and abstraction</a></li>
+          </ul>
+    </ul>
+    <ul class="content-item">
+      <li><a href="#part-9">9. APIs</a></li>
+          <ul>
+            <li><a href="#section-9-1">What is API?</a></li>
+            <li><a href="#section-9-2">How do APIs work?</a></li>
+            <li><a href="#section-9-3">Advantages of APIs</a></li>
+            <li><a href="#section-9-4">How to be a good citizen on the Internet</a></li>
+            <li><a href="#section-9-5">API Protocols</a></li>
+          </ul>
+    </ul>
+  </div>
+  <h1>Summary</h1>
+  <div class="part">
+    <h2 id="part-1">1. The Basics of the Web</h2>
+    <div class="section" id="section-1-1">
+      <div class="section-title">World Wide Web</div>
+      <div class="section-description">
+        <p>
+          <b>WWW</b> is a collection of <b>HTML</b> documents. <b>Hyper Links</b> connect between web pages.
+        </p>
+      </div>
+    </div>
+    <div class="section" id="section-1-2">
+      <div class="section-title">Components of the Web</div>
+      <div class="section-description">
+        <p>
+          The three major pieces of the web are the user, the Internet and the servers. By using HTTP requests user's browser gets files back from the servers.
+        </p>
+      </div>
+    </div>
+    <p><a href="#toc">Back to Table of Contents</a></p>
+  </div>
+  <div class="part">
+    <h2 id="part-2">2. HTML</h2>
+    <div class="section" id="section-2-1">
+      <div class="section-title">What is HTML?</div>
+      <div class="section-description">
+        <p>
+          HTML documents are the heart of the web. HTML stands for <b>HyperText</b> markup language. HTML is made up of text content (what you see), markup(what that content looks like or how it's arranged), references to other documents (images, videos etc.) and links to other pages.
+        </p>
+      </div>
+    </div>
+    <div class="section" id="section-2-2">
+      <div class="section-title">Tags</div>
+      <div class="section-description">
+        <p>
+          HTML markup is made up of things called <b>opening and closing tags</b>. The whole thing might be referred as an <b>element</b>. There are two types of elements: <b>inline</b> and <b>block</b> elements. Inline element is in line with the text (e.g. span), whereas block element forms an imaginary block around the content (e.g. div). There are also <b>void</b> elements such as: br, img and link.
+        </p>
+      </div>
+    </div>
+    <div class="section" id="section-2-3">
+      <div class="section-title">Marking Links</div>
+      <div class="section-description">
+        <p>
+          There is a special type of tags with <b>attributes</b>. These are tags withholding attributes inside. Examples of tags with attributes are img, a, link etc. Creating links to other content is done using the src (for images) or href attributes.
+        </p>
+      </div>
+    </div>
+    <div class="section" id="section-2-4">
+      <div class="section-title">Structure</div>
+      <div class="section-description">
+        <p>
+          The basic structure of an HTML document consist a head element containing title element and body, all wrapped in html element. As the HTML page grows there will be more elements within element or so called <b>tree like structure</b>.
+        </p>
+      </div>
+    </div>
+    <p><a href="#toc">Back to Table of Contents</a></p>
+  </div>
+  <div class="part">
+    <h2 id="part-3">3. Creating Structured Documents</h2>
+    <div class="section" id="section-3-1">
+      <div class="section-title">First Step</div>
+      <div class="section-description">
+        <p>
+          Building a web page can be compared with the building of a house. We first start building the foundations, the walls and we finish the basic structure with the roof. This is just like the HTML. After we finish with the basic structure we start work on the external and internal decoration of the house. Painting the walls, furnishing the place and hanging paintings. This is the role of CSS in our document. With CSS we can set different appearance for every single element in our HTML document. Finally we equip our house with some gadgets. Some might might be as simple as automatic garage door some might be as complex as home automation system. This is the place for Javascript in our web page.
+        </p>
+        <img src="http://blog.teamtreehouse.com/wp-content/uploads/2014/11/progressive-enhancement.png" alt="Progresive enhancement">
+      </div>
+    </div>
+    <div class="section" id="section-3-2">
+      <div class="section-title">HTML-CSS-DOM</div>
+      <div class="section-description">
+        <p>
+          <b>HTML</b> is the language of the web. It has syntax and its rules. The basic word in HTML is tag. The browser turns HTML tags into elements that form a tree. It knows how to do that because of the DOM.
+        </p>
+        <p>
+          <b>CSS</b> - Cascading Style Sheets - style sheet language used for describing the look and formatting of a document written in a markup language.
+        </p>
+        <p>
+          <b>DOM</b> - Document Object Model - a cross-platform and language-independent convention for representing and interacting with objects in HTML (and other markup languages). The nodes of every document are organized in a tree structure, called the DOM tree.
+        </p>
+      </div>
+    </div>
+    <div class="section" id="section-3-3">
+      <div class="section-title">Boxes, Grids and Rules</div>
+      <div class="section-description">
+        <p>
+          Everything on a web page is a box. By thinking in terms of boxes front end developers can easily rearrange things if they decide to give the users different experience. There is also a grid in the background that serves to make sure that everything is properly aligned.
+        </p>
+        <p>
+          Boxes are made up of several components. The first one is the core of the box and this is the content. It might be text or image or video or something else. Than we have padding, surrounded by the border and the outer component is called margin.
+        </p>
+        <img src="http://www.codeproject.com/KB/HTML/567385/boxmodel-image.png" alt="box model">
+        <p class="caption">A picture is worth a thousand words...</p>
+      </div>
+    </div>
+    <p><a href="#toc">Back to Table of Contents</a></p>
+  </div>
+  <div class="part">
+    <h2 id="part-4">4. CSS Style and HTML Structure</h2>
+    <div class="section" id="section-4-1">
+      <div class="section-title">Adding Style</div>
+      <div class="section-description">
+        <p>
+          Adding style to a html document can be done in different ways. We can link our HTML document to a CSS document using the link tag in the head element. We can also add style tag within the HTML document in the head element and set the appearance for the different elements or we can use styling attributes within the individual elements.
+        </p>
+      </div>
+    </div>
+    <div class="section" id="section-4-2">
+      <div class="section-title">Positioning Boxes</div>
+      <div class="section-description">
+        <p>
+          If we want to put two boxes next to each other we have to do some positioning. To do so we're using the flex box layout. In order to achieve our goal we have to apply this style to the parent container. Than all child containers will align in a row.
+        </p>
+      </div>
+    </div>
+    <div class="section" id="section-4-3">
+      <div class="section-title">Code, Test, Refine</div>
+      <div class="section-description">
+        <ol>
+            <li>Look for natural boxes.</li>
+            <li>Look for repeated styles and semantic elements.</li>
+            <li>Write your HTML.</li>
+            <li>Apply styles from <b>BIGGEST</b> to <em>smallest</em>.</li>
+          </ol>
+      </div>
+    </div>
+    <p><a href="#content">Back to Table of Contents</a></p>
+  </div>
+  <div class="part">
+      <h2 id="part-5">5.Programming</h2>
+      <div class="section" id="section-5-1">
+          <div class="section-title">What is programming?</div>
+          <div class="section-description">
+            <p>Programming is the process of giving computers certain instructions using a programming language. There are many different programming languages, but the language we're using in our study is called Python.</p>
+          </div>
+      </div>
+      <div class="section" id="section-5-2">
+          <div class="section-title">Why using programming languages?</div>
+          <div class="section-description">
+            <p>We use programming languages because of their unambiguity. In natural languages one thing may mean different things where as in programming languages every command is unambiguous meaning there is only one interpretation.</p>
+          </div>
+      </div>
+      <p><a href="#toc">Back to Table of Contents</a></p>
+  </div>
+  <div class="part">
+      <h2 id="part-6">6.Python</h2>
+      <div class="section" id="section-6-1">
+          <div class="section-title">Python expressions</div>
+          <div class="section-description">
+            <p>Just like the grammar rules in natural languages there are rules in every programming language called syntax that have to be followed. Expression is something that has a value. We can also make an expression by combining other expressions with a set of operators (e.g. +, -, *, /).</p>
+          </div>
+      </div>
+      <div class="section" id="section-6-2">
+          <div class="section-title">Variables</div>
+          <div class="section-description">
+            <p>Variable is a name created by us that refers to a value. The way to introduce a variable is by using an assignment statement (e.g. name = expression). A name could be any combination of characters as long as it starts with a letter and is not one of the Python keywords. Variables can change their value.</p>
+          </div>
+      </div>
+      <div class="section" id="section-6-3">
+          <div class="section-title">Strings</div>
+          <div class="section-description">
+            <p>String is a sequence of characters surrounded by quotes. Quotes can be single, double or in case of multiple lines triple. Valid strings start and end with the same quotes. We can join (concatenate) strings using + operator but we can't combine strings with numbers.</p>
+            <p>Another thing we can do with strings is to extract sub sequences or single characters. We can extract character using square brackets and an expression (e.g. <span class="highlight">[expression]</span>). To select a sub sequence we need to set a start and end position separated by a colon inside the square brackets (e.g.<span class="highlight">[expression : expression]</span>). All expressions must be numbers.
+            </p>
+            <p>There are different operations or methods that can be applied on strings. This is one of them:</p>
+            <ul>
+              <li><b>find</b>
+                <ul class="bullets">
+                  <li>Using one parameter<br>
+                    <b>Use:</b> string1.<b>find</b>(string2)<br>
+                    <b>Explanation:</b> finds where string2 occurs in string1.<br>
+                    <b>Return value:</b> position of the first occurrence – a number. If none -1.
+                  </li>
+                </ul>
+                <ul class="bullets">
+                  <li>Using two parameters<br>
+                    <b>Use:</b> string1.<b>find</b>(string2, number)<br>
+                    <b>Explanation:</b> finds where string2 occurs in string1 after the first occurrence if number is greater that the return value of the first position.<br>
+                    <b>Return value:</b> position of the second occurrence – a number. If none -1.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+      </div>
+      <div class="section" id="section-6-4">
+          <div class="section-title">Procedures/ Functions</div>
+          <div class="section-description">
+            <p>Function is a callable sub-program within a larger program. To create a function we need to give it a name followed by opening parentheses, list of inputs and closing parentheses followed by a colon(e.g. <span class="highlight">function(input1, input2):</span> ). Inputs are called operands or arguments. The line after the name and the input of the function is the body. Inside the body is the place where we write/ give all instructions for this function to perform usually ending with a return statement. The return statement is the function’s output. To summarise, this is how a function work:</p>
+            <p class="center_yellow">INPUT >>> FUNCTION (SOME CALCULATIONS/ OPERATIONS) >>> OUTPUT</p>
+            <p>One of the main rules in programming is to avoid repetition. Functionas are extremely helpful in this regard. If we have a set of operations that we need to perform often, we can build a function and call it every time we have to apply those operations. We can also use functions within functions, meaning we can break a complicated and long set of operations into a number of different simpler functions. And last but not least, in every programming language there is an extensive list of built in functions we can use whenever needed(e.g. <span class="highlight">append(), index(), len()</span>).</p>
+          </div>
+      </div>
+      <div class="section" id="section-6-5">
+          <div class="section-title">Making decisions</div>
+          <div class="section-description">
+            <p>To make code behave differently we need to make decision based on what the data is. To make those decisions we need some comparisons. Python provides different operators for comparison.</p>
+            <p>This is a list with some of them:</p>
+            <ul class="bullets">
+              <li>&lt; less then</li>
+              <li>&gt; greater then</li>
+              <li>&lt;= less or equal</li>
+              <li>&gt;= greater or equal</li>
+              <li>== equal</li>
+              <li>!= not equal</li>
+            </ul>
+            <p>All of those operate on number, but the output value has a Boolean value of True or False.</p>
+          </div>
+      </div>
+      <div class="section" id="section-6-6">
+          <div class="section-title">If Statements</div>
+          <div class="section-description">
+            <p>Having the knowledge to make decisions, we now need something to make code behave different. The way to do that is by using if statement. The syntax of if statement is:</p>
+            <p> if &lt;test expression&gt;:</p>
+            <p class="indented">&lt;first block of code&gt;</p>
+            <p>else:</p>
+            <p class="indented">&lt;second block of code&gt;</p>
+            <p>If the test expression is true, the first  block of code is executed – if not the second block is executed.</p>
+          </div>
+      </div>
+      <div class="section" id="section-6-7">
+          <div class="section-title">While loop</div>
+          <div class="section-description">
+            <p>While loop is a construct that executes code over and over again until some condition is met.</p>
+            <p>While syntax:</p>
+            <p>while &lt;test expression&gt;:</p>
+            <p class="indented">&lt;block of code&gt;</p>
+            <p>Until the test expression is true, the block of code inside the loop will be executed over and over again. There is a way of stopping the loop before the test expression is false and it is done by using the break statement. This could be very handy if we have another condition inside the loop and it’s fulfilled before the test expression changes its value.</p>
+          </div>
+      </div>
+      <div class="section" id="section-6-8">
+          <div class="section-title">Debugging</div>
+          <div class="section-description">
+            <p>Debugging is the process of locating and fixing or bypassing bugs (errors) in computer program code. To debug a program is to start with a problem, isolate the source of the problem, and then fix it.</p>
+            <p>Important steps in debugging a problem:</p>
+            <ul class="bullets">
+              <li>Examine error messages and google for solution.</li>
+              <li>If your code doesn't work, find an example code, run it and see how it works.</li>
+              <li>When working with example code, always make sure it's working by running it first.</li>
+              <li>If there is no error message but your code doesn't do what it's supposed to do – use print statements to check value for different variables.</li>
+              <li>keep copy of your code before making any changes</li>
+            </ul>
+          </div>
+      </div>
+      <div class="section" id="section-6-9">
+          <div class="section-title">Structured data: Lists</div>
+          <div class="section-description">
+            <p>String is a type of structured data but its use is limited to characters only. To store different kinds of data we need another structured data type called list. Lists can store sequences of anything. Just like in string we can access different elements of a list using the same syntax: <span class="highlight">random_list[0]</span> gives us access to the first element of <span class="highlight">random_list</span>. We can slice sub sequences: <span class="highlight">random_list[0 : 3]</span>, this will give us all elements between index 0 and 3 (<span class="highlight">not incl.</span>). As mentioned before lists can store all kind of data including other lists. A list within a list is called nested list.</p>
+            <p>There is another big difference between strings and lists and that’s the list’s ability to support mutation. Mutation means we can change the value of a list after it’s been created.</p>
+            <p>List operations:</p>
+            <ul class="bullets">
+              <li><b>append()</b>
+                <ul>
+                  <li>
+                    <b>Use:</b> list.<b>append</b>(element)<br>
+                    <b>Explanation:</b> append adds a new element at the end of the list. This method is mutator.<br>
+                  </li>
+                </ul>
+              </li>
+              <li><b>+</b>
+                <ul>
+                  <li>
+                    <b>Use:</b> [0, 1] + [2, 3]<br>
+                    <b>Explanation:</b> Joins two lists together: [0, 1, 2, 3].
+                  </li>
+                </ul>
+              </li>
+              <li><b>len()</b>
+                <ul>
+                  <li>
+                    <b>Use:</b> <b>len</b>(list)<br>
+                    <b>Explanation:</b> gives us the number of elements in the list. In case of nested lists, len only counts the number of the outer elements.<br>
+                  </li>
+                </ul>
+              </li>
+              <li><b>index()</b>
+                <ul>
+                  <li>
+                    <b>Use:</b> list.<b>index</b>(value)<br>
+                    <b>Explanation:</b> index looks for value inside the list and returns the value position, where it first occurs. If the value we are looking for isn’t in the list, index returns error.<br>
+                  </li>
+                </ul>
+              </li>
+              <li><b>in</b>
+                <ul>
+                  <li>
+                    <b>Use:</b> value <b>in</b> list<br>
+                    <b>Explanation:</b> looks for given value in the list. If found, returns True, if not False.<br>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+      </div>
+      <div class="section" id="section-6-10">
+          <div class="section-title">Aliasing</div>
+          <div class="section-description">
+            <p>When we have two different ways to refer to an object, that’s called aliasing.</p>
+          </div>
+      </div>
+      <div class="section" id="section-6-11">
+          <div class="section-title">For loop</div>
+          <div class="section-description">
+            <p>For iteration inside lists, Python provides another construct called For loop.</p>
+            <p><b>For</b> - syntax:</p>
+            <p><b>for</b> name in list:</p>
+            <p style="text-indent: 50px">&lt;block of code&gt;</p>
+            <p>Name is a variable. We assign the first element to this variable and do something in the block with the code. Once we finish with this element, the for loop assigns next element to name and so on until we go through all the elements inside the list.</p>
+          </div>
+      </div>
+      <div class="section" id="section-6-12">
+          <div class="section-title">How to solve problems?</div>
+          <div class="section-description">
+            <ul class="bullets">
+              <li>Understanding a computational problem
+                <ul>
+                  <li>make sure we understand the possible inputs</li>
+                  <li>what are the outputs</li>
+                </ul>
+              </li>
+              <li>Solve the problem
+                <ul>
+                  <li>consider systematically how a human would solve the problem</li>
+                  <li>write a pseudocode</li>
+                  <li>try to find simple mechanical solution don't optimize prematurely. First make it Simple and Correct!</li>
+                  <li>develop incrementally and test as you go</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+      </div>
+      <p><a href="#toc">Back to Table of Contents</a></p>
+  </div>
+  <div class="part">
+        <h2 id="part-7">7.Object Oriented Programing (OOP)</h2>
+        <div class="section" id="section-7-1">
+            <div class="section-title">What is OOP?</div>
+            <div class="section-description">
+                <p>
+                  As the name suggest <span class="highlight">O</span>bject <span class="highlight">O</span>riented <span class="highlight">P</span>rogramming is a type of language based on the concept of <span class="highlight">objects</span>. This type of programming defines not only the data type of a structure, but also the types of operations (<span class="highlight">methods</span>) that can be applied to the data structure. These data structures are called objects and they contain data in the form of fields, aka <span class="highlight">attributes</span>.
+                </p>
+                <p>
+                  OOP is a very powerful tool when it comes to large scale projects. Here are some of the advantages:
+                  <ul class="bullets">
+                    <li>
+                      Modules created in a OO program can easily be reused in other programs. Once a module is created, knowledge of how it actually works isn't neccessary for its use. In procedure-based programming, coders needed understand the details of a piece of code before using it. Objects in object-based program development can be extended to include new attributes and behaviors and they can be reused within and accross applications. Beacause of this OOP proves to be more reliable software development tool, suitable for large scale projects.
+                    </li>
+                    <li>
+                      It's easy to maintain and modify existing code. Because of its modular nature, updates can be applied to individual modules without the need of large-scale changes. If there are issues, it's easier to locate the problem since we apply the changes gradually.
+                    </li>
+                    <li>
+                      Reuse of code helps for faster development. The extensive list of libraries in and outside the standart library helps us build our application and saves time. The code we write could be reused in other projects to come, thus saving us time and money.
+                    </li>
+                    <li>
+                      All of the above helps programmers spend less time writing code and allows them to analize and verify the software, resulting in higher quality and fault proof applications.
+                    </li>
+                  </ul>
+                </p>
+            </div>
+        </div>
+        <div class="section" id="section-7-2">
+            <div class="section-title">What is a Class?</div>
+            <div class="section-description">
+                <p>
+                  Class is code in a file in or outside <span class="highlight">Python Standart Library</span>. In that class we have function called <span class="highlight">__init__</span> (short for initialize). Every time we call a class we run this method by default and it creates space in memory for a new object. The newly created object can access the rest of the methods inside the class. Every class has a set of <span class="highlight">attributes</span> (properties) that apply to multiple objects created of that class. We can think of a class as a blue print and we can think of its objects as examples of objects of that blue print.
+                </p>
+            </div>
+        </div>
+        <div class="section" id="section-7-3">
+            <div class="section-title">Importing Classes</div>
+            <div class="section-description">
+                <p>Built in classes:</p>
+                <p class="indented">Part of the library,no need to import.</p>
+                <p>Outside the library:</p>
+                <p class="indented">
+                  The <span class="highlight">from... import</span> statement in Python lets us <span class="highlight">import specific attributes from a module into the current namespace</span>. In our example we have from twilio.rest import TwilioRestClient When we look in twilio github page we can find a directory called twilio. Inside is another directory called 'rest'. In rest, there is a   python file where we can find class called TwilioRestClient. Basically what the from...import statement does is, finding class TwilioRestClient in /twilio/rest/__init__.py and implementing this code in our file. We can also import directories but in this case when we create object we have to write the name of the directory in front of the class name followed by a dot.
+                </p>
+                <p>Note:</p>
+                  <ul>
+                    <li><span class="highlight">Library</span> is a generic term for a package or a single module being published.</li>
+                    <li><span class="highlight">Python Standart Library</span> is a wide range of built-in modules.</li>
+                    <li><span class="highlight">Python Package Index</span> is a collection of modules, packages or even entire application development frameworks.</li>
+                    <li><span class="highlight">Package</span> is a collection of modules.</li>
+                    <li><span class="highlight">Module</span> is a file containig code for a Class.</li>
+                  </ul>
+            </div>
+        </div>
+        <div class="section" id="section-7-4">
+            <div class="section-title">Creating Classes</div>
+            <div class="section-description">
+                <p>
+                  First thing when creating a class is to write the keyword <span class="highlight">class</span> and a <span class="highlight">Name</span>. It's recommended the name we give to have logical connection with the class and to start with a capital letter. A class can have both data and methods(functions inside a class). As mentioned prior a class can have multiple objects or instances. When we create an object of a class, the class's <span class="highlight">constructor</span> is called. This is the <span class="highlight">__init__</span> method inside the class. This is where we <span class="highlight">initialize</span> all the data associated with the object/ instance. The constructor uses the keyword <span class="highlight">self</span>. <span class="highlight">Self</span> refers to the object/ instance. All variables associated with a specific instance/ object are called <span class="highlight">instance variables</span>. Those are unique to an object and can be accessed using the 'self' keyword inside a class and the instance name outside the class. All functions inside a class associated with an object/ instance and have self as an argument are called <span class="highlight">instance methods</span>.
+                </p>
+            </div>
+        </div>
+        <div class="section" id="section-7-5">
+            <div class="section-title">Class variables</div>
+            <div class="section-description">
+                <p>
+                  <span class="highlight">Class variables</span> are defined in the class, outside class's methods. Class variables can be accessed by every instance (object) of that class. If a <span class="highlight">class variable</span> is not expected to change it's value (i.e. <span class="highlight">constant</span>), Python conventions recommend use of capital letters for the name, e.g. <span class="highlight">CLASS_VARIABLE</span>.
+                </p>
+            </div>
+        </div>
+        <div class="section" id="section-7-6">
+            <div class="section-title">Predefined class attributes</div>
+            <div class="section-description">
+                <p>Classes have five <span class="highlight">predefind attributes</span>. Here are some of them:</p>
+                  <ul>
+                    <li>__name__  Class name</li>
+                    <li>__doc__   This atribute is defind right after the name of the class. It's wrapped in triple quotes and represents class's documentation</li>
+                    <li>__module__  When called this module gives us the name of the file containing our class</li>
+                  </ul>
+            </div>
+        </div>
+        <div class="section" id="section-7-7">
+            <div class="section-title">Inheritance</div>
+            <div class="section-description">
+                <p>
+                  When we have a class with a number of atributes and another class with the same attributes plus some more, instead of rewriting everything again for the new class we can use what we already have and just add the new attributes. We can do this by declaring our new class as a child of the first one. Our child class can now access all the attributes declared in its parent class(the first class).<br>
+                  Example:
+                </p>
+                <img src="http://i.imgur.com/T2cOfEY.png?1" alt="Parent-Child Class">
+                 <p>
+                  This relationship between classes is called <span class="highlight">Inheritance</span>. Another feature of inheritance is <span class="highlight">method reuse</span>. This means we can <span class="highlight">access</span> and <span class="highlight">use methods</span> in our Parent class with an object of a Child class.
+                 </p>
+                 <p>
+                  When a method defined in the child class <span class="highlight">overrides</span> a method with the same name in the parent class, it's called <span class="highlight">method overriding</span>.
+                 </p>
+                 <p>
+                  A good example for inheritance can be made with what we've already learned about styling HTML pages. For example, if we set certain properties for the body element like font-style, color or family, all these properties will be inherited by the child elements: paragraphs, lists etc. But if we set different properties for one of the elements, this element will appear different than the rest inside the body. The reason for this is just like in method overriding in classes, we override the inherited values with the local inside the element.
+                 </p>
+            </div>
+        </div>
+    <p><a href="#toc">Back to Table of Contents</a></p>
+  </div>
+  <div class="part">
+    <h2 id="part-8">8.Dynamic Web Applications</h2>
+    <div class="section" id="section-8-1">
+        <div class="section-title">Servers</div>
+        <div class="section-description">
+          <p>
+            Server refers to computer or group of computers that manages network resources, but it also means a computer program (webapplication) that accepts and responds to requests made by another program, known as a client(e.g. browser). Some servers do only specific task and are often reffered as dedicated like print, file, network and database servers.
+            A <span class="highlight">web server</span> is a special type of file server. It retrieves files from the server's hard drives, formats the files for the web browser and sends them back. Web servers are created and used for static content like graphic or pre written files. They have pretty limited capability for accessing dynamic content.
+          </p>
+          <p>
+            On the other hand we have web <span class="highlight">application servers</span>, that are designed specifically to extend web servers to support dynamic content. The application server connects to the web server software and automatically intercepts any user requests for dynamic content. The web server still sends out static web pages and graphic files, but now the application server can create dynamic content by mixing data with templates, running programs or by accessing databases.
+          </p>
+            <div type="images">
+              <img type="multi" src="http://www.resultantsys.com/wp-content/uploads/webserver.gif" alt="webserver">
+              <img type="multi" src="http://www.resultantsys.com/wp-content/uploads/appserver.gif" alt="appserver">
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section-8-2">
+        <div class="section-title">Importance of validating input</div>
+        <div class="section-description">
+          <p>
+            Validation is an automatic check on the server or client side, that data entered is sensible and reasonable. Validation exists to ensure that application is robust against all forms of input data. Invalida data can cause unexpected execution errors, break HTML documents and even let someone hijack services or steal data. To avoid all this there are some steps we can apply to our application. We can use <span class="highlight">HTML escaping</span> for all variables that take input from the user. Escaping allows certain characters in the HTML code (e.g. &lt;,&gt;, &amp;, &guot;)to be replaced with an ASCII table matching number. By using escaping we eliminate the possibility some special character for HTML to break our code by replacing them. Another way is to use <span class="highlight">drop down</span> forms, thus eliminating the chance for a user to enter invalid information or <span class="highlight">setting ranges</span> for input. <span class="highlight">Radio buttons</span> or <span class="highlight">check boxes</span> is another alternative. In regard to passwords and emails <span class="highlight">confirmation field</span> is a good practice.
+          </p>
+        </div>
+    </div>
+    <div class="section" id="section-8-3">
+        <div class="section-title">HTML templates and abstraction</div>
+        <div class="section-description">
+          <p>
+            HTML templating is a way to represent data in different forms. Template usually looks like the final output with placeholders instead of actual data and has common style and visual elements. Data presented using the template could be two different kinds. Data required to be rendered and data required for the template itself. For both types we can and often use <span class="highlight">string substutution</span>. Let's say we want different appearance or different output on the page in event something chages. We can do this by adding a variable in our string and substitute this variable with a string when required. Example for this might be an error message. The variable in the string or in the html won't be assigned until an error occures. When we have an error, we can assign error message to the variable an this will be now visible on the page. Using string substitution in html strings is very error prone. This is why we use <span class="highlight">template engines</span>.
+          </p>
+          <p>
+            An example for template engine is <span class="highlight">Jinja</span>. Jinja gives us the ability not only to substitute strings but a great deal more. By using Jinja we can apply <span class="highlight">HTML escaping</span> to the whole application, we can use <span class="highlight">python statements</span> inside the html documents and it provides <span class="highlight">template inheritance</span>. Template inheritance is a helpful concept allowing us to <span class="highlight">reuse HTML</span> and keeping code and HTML files separated. It aslo helps for more readable code, makes websites more secure and the html content is easier to modify.
+          </p>
+        </div>
+    </div>
+    <p><a href="#toc">Back to Table of Contents</a></p>
+  </div>
+  <div class="part">
+        <h2 id="part-9">9.APIs</h2>
+        <div class="section" id="section-9-1">
+            <div class="section-title">What is API?</div>
+            <div class="section-description">
+              <p>
+                API stands for <span class="highlight">A</span>pplication <span class="highlight">P</span>rograming <span class="highlight">I</span>nterface. APIs enable our web sites to communicate not just with browsers but with other computers as well. When interacting with browsers we use HTML but if we want to <span class="highlight">send</span> or <span class="highlight">receive data</span> from <span class="highlight">servers</span> we use formats like <span class="highlight">XML</span> or <span class="highlight">JSON</span>, which are similar to HTML but designed to be read by computers instead.
+              </p>
+            </div>
+        </div>
+        <div class="section" id="section-9-2">
+            <div class="section-title">How do APIs work?</div>
+            <div class="section-description">
+              <p>
+                Let's say we have a simple website with some basic limited information. If a user requests information we don't have, we'll have to turn him back. Well this isn't the case having API services on our side. If we don't have the information, our website can still send HTTP request to a number other servers out there and fetch the information our user needs by getting response containing XML or JSON and then sending it back to our user. In other words our website plays the role of a middle man between our users and the information hosted by third parties.
+              </p>
+              <a href="http://i.imgur.com/PyVUseo.jpg" target="_blank"><img src="http://i.imgur.com/PyVUseo.jpg" alt="API.jpg"></a>
+              <p>
+                So how does HTTP request to other sites works. First we have to import <span class="highlight">urllib</span> and <span class="highlight">urllib2</span> libraries. Then we open a url connection to the server of our choice using the urllib2 function urlopen() and we give the address as a parameter (e.g. <span class="highlight">urllib2.urlopen("http://www.somewebsite.com")</span>). Once connected to server of our choice we send request with the information we need. The third party server returns a XML or JSON document to our request. In order to use the information we have to parse this document and get the data we need.
+              </p>
+              <ul>Parsing <span class="highlight">XML</span>
+                <li>
+                  First we have to import another library: <span class="highlight">from xml.dom import minidom</span>. After we import the library we can parse the the XML we already have by calling the function <span class="highlight">minidom.parseString("our XML file as parameter")</span>. Once we parse our XML document then we can access different elements within. By using the minidom function <span class="highlight">getElementsByTagName("and we pass in the tag element we want to access")</span>. XMLs have tree like structure and by calling getElementsByTagName we can see child elements of the element of our choice. To see what's inside the child elements we call <span class="highlight">XML.getElementsByName("first element")[child element index]</span>(note: indexes of child elements start from 0 just like in lists). Calling the last function will return the child elements of the child element and so on until we reach a child element storing some value. We can retrieve this one by calling XML.getElementsByName("element_name")[n].<span class="highlight">childNodes[n].nodeValue</span> (note:XML is our XML document and n being the index of the child element).
+                </li>
+              </ul>
+              <ul>Parsing <span class="highlight">JSON</span>
+                <li>
+                  JSON serves the same purpose as XML. It's a nice kind of computer and human readable way to exchange data in a consistent format. JSON is abbreviation from <span class="highlight">J</span>ava<span class="highlight">S</span>cript <span class="highlight">O</span>bject <span class="highlight">N</span>otation. The content of a JSON document is very similar to a <span class="highlight">dictionary</span> with key, value pairs inside. To parse a JSON we have to <span class="highlight">import json</span> library. Then we run the function <span class="highlight">json.loads(name_of_our_json_document)</span>. When we run this, Python returns a dictionary. If we store that to a variable we can then manipulate this variable as a dictionary. After we have this data as a dictionary we can browse by getting key value or getting list of keys within keys using the <span class="highlight">.keys()</span> method.
+                </li>
+              </ul>
+            </div>
+        </div>
+        <div class="section" id="section-9-3">
+            <div class="section-title">Advantages of APIs</div>
+            <div class="section-description">
+              <p>
+                APIs allow web developers build their websites on top of already existing sites. Many large sites like wikipedia, twitter, reddit, all support this type of functionality. One of the nice things when building a web site is, if you have data - you can provide API and other developers can build their website on top of yours.
+              </p>
+            </div>
+        </div>
+        <div class="section" id="section-9-4">
+            <div class="section-title">How to be a good citizen on the Internet</div>
+            <div class="section-description">
+              <ul>Use a good user-agent:
+                <li>
+                  By providing <span class="highlight">user-agent</span> we identify ourselves on the web. In case we access somebody's servers consistently and making a lot of request, thus hurting their services, if there is a user agent they can get in touch with you to limit your requests instead of blocking you.
+                </li>
+              </ul>
+              <ul><span class="highlight">Rate-limit</span> yourself:
+                <li>
+                  When doing requests to other servers we might use some sort of a cycle, like while loop for example. If the rate of our requests is high and for prolonged periods of time we might overload the servers we request information from. To avoid this it's a good habit to include a time.sleep() function in our cycles.
+                </li>
+              </ul>
+            </div>
+        </div>
+        <div class="section" id="section-9-5">
+            <div class="section-title">API Protocols</div>
+            <div class="section-description">
+              <p>
+                List of common protocols for communication between machines:
+              </p>
+              <ul>
+                <li>SOAP - Microsoft protocol</li>
+                <li>Protocol Buffers from Google. Similar to JSON</li>
+                <li>Thrift created by Facebook</li>
+                <li>XML</li>
+                <li>JSON</li>
+              </ul>
+            </div>
+        </div>
+        <p><a href="#toc">Back to Table of Contents</a></p>
+    </div>
+
+  {% block comments %}
+  {% endblock %}
+
+  <p class="w3css">This document validates as CSS level 3.</p>
+  <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+  </a>
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+/* This is a CSS comment */
+body {
+	background-color: rgb(27, 27, 27);
+	padding: 2% 1%;
+	font: 150%/1.2 Helvetica;
+	max-width: 90%;
+	margin: 0 auto;
+}
+
+h1 {
+	text-align: center;
+	color: rgb(174, 127, 26);
+}
+
+h2 {
+	margin: 10px;
+}
+
+p {
+	margin: 10px 0;
+}
+
+a{
+	color:white;
+}
+
+ul {
+	list-style-type: none;
+}
+
+ul li {
+	font: 20px;
+	line-height: 44px;
+}
+
+ol {
+	display: block;
+	margin-left: 30%;
+	margin-right: auto;
+	list-style-position:inside
+}
+
+img {
+	display: block;
+	margin: 40px auto 0 auto;
+	width: 380px;
+	height: auto;
+}
+
+img[type="multi"]{
+	display: inline-block;
+	margin: 40px;
+}
+
+div[type="images"]{
+	text-align: center;
+}
+
+/*Stile for the content table*/
+
+.content{
+	margin: 0 auto;
+	text-align: justify;
+}
+
+.content-item{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.content-item a {
+	color: rgb(174, 127, 26);
+}
+
+.part {
+	background-color: black;
+	border-radius: 20px;
+	color: rgb(174, 127, 26);
+	padding: 10px;
+	margin: 10px auto;
+}
+
+/*Styling for back to the contents link*/
+.part > p{
+	text-align: right;
+	margin-right: 20px;
+}
+
+.section {
+	background-color: rgb(27, 27, 27);
+	padding: 4px;
+	margin: 10px;
+	border-radius: 4px;
+	color: black;
+}
+
+.section-title {
+	font-size: 28px;
+	margin: 8px;
+	text-align: center;
+	color: #e0eaf2;
+}
+
+.section-description {
+	color: #e0eaf2;
+	font-weight: lighter;
+	margin: 6px;
+}
+
+.section-description ul{
+	line-height: 20px;
+}
+
+/*Styling for the image captions*/
+.caption{
+	font: 0.75em italic;
+	text-align: center;
+}
+
+/*Style for some of the ordered lists*/
+.bullets{
+	list-style-type: circle;
+}
+
+.bullets li{
+	line-height: inherit;
+}
+
+/*Styling for highliting important parts in text*/
+.highlight{
+	color: yellow;
+}
+
+.indented{
+	margin-left: 40px;
+}
+
+/*Styling for all highlighted, centered texts in the document.*/
+.center_yellow{
+	color: yellow;
+	text-align: center;
+}
+
+/*W3CSS Logo and link ate the bottom of the page*/
+.w3css{
+	color: yellow;
+	text-align: center;
+}
+
+/*Following styling is for the comment section*/
+.posts{
+	margin-bottom: 100px;
+}
+
+.post-user{
+	background-color: black;
+	border-radius: 20px;
+	padding: 10px;
+	margin: 10px auto;
+	text-align: left;
+	color: #e0eaf2;
+	font-size: 20px;
+}
+
+.post-title {
+	font-size: 28px;
+	margin: 8px;
+	text-align: center;
+	color: rgb(174, 127, 26);
+}
+
+.post-comment {
+	color: #e0eaf2;
+	font-size: 20px;
+	font-weight: lighter;
+	margin: 0px 6px 20px 6px;
+	text-align: left;
+	vertical-align: top;
+}
+
+form {
+	text-align: left;
+}
+
+textarea{
+	width: 600px;
+	height: 200px;
+	font-size: 18px;
+}
+
+.form-title{
+	width: 602px;
+	height: 20px;
+	margin: 0 auto 10px auto;
+	font-size: 18px;
+}
+
+small{
+	text-align: left;
+	color: rgb(174, 127, 26);
+	float: left;
+	margin-top: 10px;
+	font-size: 18px;
+}
+
+.error{
+	text-align: center;
+	color: red;
+}
+
+.form-map{
+	text-align: center;
+	margin: 10px auto 70px auto;
+	vertical-align: top;
+}
+
+div[type="form"]{
+	display: inline-block;
+	margin: auto 40px;
+	height: 300px;
+	vertical-align: top;
+}
+
+div[type="map"]{
+	display: inline-block;
+	margin: auto 40px;
+	padding: 0;
+	height: 300px;
+	width: 600px;
+	vertical-align: top;
+}
+
+.map{
+	display: block;
+	vertical-align: top;
+	margin: 0;
+}
+
+input[type="submit"]{
+	border: 0;
+	border-radius: 20px;
+	background: green;
+	color: white;
+	font-size: 18px;
+	margin: 0 auto;
+	float: right;
+	margin-top: 10px;
+}

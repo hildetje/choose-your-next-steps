@@ -1,0 +1,58 @@
+{% extends "index.html" %}
+{% block comments %}
+
+<div class="posts" id="posts">
+  <h1>A penny for your thoughts</h1>
+    {% for comment in template_values.comments %}
+      <div class="post-user">
+        {% if comment.author %}
+            {{ comment.author.email }}
+              {% if user and user.user_id() == comment.author.identity %}
+                (You)
+              {% endif %}
+        {% else %}
+          Anonymus wrote:
+        {% endif %}
+      </div>
+        <div class="post-title">
+          {{ comment.title }}
+        </div>
+        <div class="post-comment">
+          {{ comment.content }}
+        </div>
+      {% endfor %}
+
+    <br>
+    <hr>
+    <br>
+    <p class="error">{{template_values.error}}</p>
+    <div class="form-map">
+      <div type="form">
+        <form action="/" method="post">
+          <input class="form-title" name="title" type="text"
+                  placeholder="Title" value ="{{template_values.title}}">
+          <br>
+          <textarea name="content" placeholder="Place yourself on the map by leaving a comment."
+                    rows="10" cols="60">{{template_values.content}}</textarea>
+          <br>
+          <small>
+            {% if template_values.url_linktext  == "Login" %}
+              {{template_values.users_prompt}} <a href="{{ template_values.url|safe }}">
+              {{ template_values.url_linktext }}</a>
+            {% else %}
+              <a href="{{ template_values.url|safe }}">
+              {{ template_values.url_linktext }}</a>
+            {% endif %}
+          </small>
+          <input type="submit" class="submit-comment" value="Post Comment">
+        </form>
+      </div>
+      <div type="map">
+        {% if template_values.img_url %}
+          <img class="map" src="{{ template_values.img_url|safe }}">
+        {% endif %}
+      </div>
+    </div>
+</div>
+
+{% endblock %}
