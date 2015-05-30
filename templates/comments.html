@@ -34,24 +34,43 @@
           <br>
           <textarea name="content" placeholder="Place yourself on the map by leaving a comment."
                     rows="10" cols="60">{{template_values.content}}</textarea>
-          <br>
-          <small>
-            {% if template_values.url_linktext  == "Login" %}
-              {{template_values.users_prompt}} <a href="{{ template_values.url|safe }}">
-              {{ template_values.url_linktext }}</a>
-            {% else %}
-              <a href="{{ template_values.url|safe }}">
-              {{ template_values.url_linktext }}</a>
-            {% endif %}
-          </small>
-          <input type="submit" class="submit-comment" value="Post Comment">
+          <div>
+            <small>
+              {% if template_values.url_linktext  == "Login" %}
+                {{template_values.users_prompt}} <a href="{{ template_values.url|safe }}">
+                {{ template_values.url_linktext }}</a>
+              {% else %}
+                <a href="{{ template_values.url|safe }}">
+                {{ template_values.url_linktext }}</a>
+              {% endif %}
+            </small>
+            <input type="submit" class="submit-comment" value="Post Comment">
+          </div>
         </form>
       </div>
-      <div type="map">
-        {% if template_values.img_url %}
-          <img class="map" src="{{ template_values.img_url|safe }}">
-        {% endif %}
-      </div>
+      <div id="map-canvas"></div>
+      <script>
+          function initialize() {
+            var mapCanvas = document.getElementById('map-canvas');
+            var mapOptions = {
+              center: new google.maps.LatLng(40.52, 34.34),
+              zoom: 1,
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            var map = new google.maps.Map(mapCanvas, mapOptions);
+
+            {% if template_values.markers %}
+            var markers = {{ template_values.markers|safe }};
+            for(i = 0; i < markers.length; i++){
+                var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(markers[i].lat, markers[i].lng),
+                map: map,
+              });
+            }
+            {% endif %}
+         }
+          google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
     </div>
 </div>
 

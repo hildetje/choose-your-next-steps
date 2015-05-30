@@ -122,8 +122,9 @@ div[type="images"]{
 	list-style-type: circle;
 }
 
-.bullets li{
-	line-height: inherit;
+.bullets li {
+ line-height: 1.2em;
+ margin-bottom: 0.5em;
 }
 
 /*Styling for highliting important parts in text*/
@@ -221,28 +222,19 @@ div[type="form"]{
 	vertical-align: top;
 }
 
-div[type="map"]{
-	display: inline-block;
-	margin: auto 40px;
-	padding: 0;
-	height: 300px;
-	width: 600px;
-	vertical-align: top;
-}
-
-.map{
-	display: block;
-	vertical-align: top;
-	margin: 0;
-}
-
 input[type="submit"]{
 	border: 0;
 	border-radius: 20px;
 	background: green;
 	color: white;
 	font-size: 18px;
-	margin: 0 auto;
-	float: right;
 	margin-top: 10px;
+	float: right;
+}
+
+#map-canvas {
+	display: inline-block;
+    width: 600px;
+    height: 276px;
+    margin: auto 40px;
 }

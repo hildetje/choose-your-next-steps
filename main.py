@@ -3,6 +3,7 @@ import re
 import sys
 import urllib
 import urllib2
+import json
 from xml.dom import minidom
 
 from google.appengine.api import users
@@ -68,11 +69,13 @@ def get_coords(ip):
 		lon = d.getElementsByTagName("Longitude")[0].childNodes[0].nodeValue
 		if lat and lon:
 			return ndb.GeoPt(lat, lon)
-GMAPS_URL = "http://maps.googleapis.com/maps/api/staticmap?size=380x300&sensor=false&"
 
-def gmaps_img(points):
-	markers = '&'.join('markers=%s,%s' % (p.lat, p.lon) for p in points)
-	return GMAPS_URL + markers
+def gmap_markers(points):
+	markers = []
+	for p in points:
+		markers.append({'lat': p.lat, 'lng': p.lon})
+	return json.dumps(markers)
+
 
 class MainPage(Handler):
 	def get(self):
@@ -92,15 +95,13 @@ class MainPage(Handler):
 			if c.coords:
 				points.append(c.coords)
 
-		img_url = None
-		if points:
-			img_url = gmaps_img(points)
+		markers = gmap_markers(points)
 
 		template_values = {
 		'user': user,
 		'comments': comments,
 		'users_prompt': "Google users please",
-		'img_url': img_url,
+		'markers': markers,
 		'url': url,
 		'url_linktext': url_linktext
 		}
