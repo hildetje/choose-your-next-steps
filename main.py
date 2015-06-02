@@ -71,7 +71,7 @@ def get_coords(ip):
 	content = None
 	try:
 		content = urllib2.urlopen(url).read()
-	except URLError:
+	except urllib2.URLError:
 		return
 	if content:
 		d = minidom.parseString(content)
