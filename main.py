@@ -1,10 +1,16 @@
 import os
+# library for template directory path
 import re
 import sys
 import urllib
 import urllib2
+# used for opening url connection
 import json
+# used for json export in gmaps_markers
 from xml.dom import minidom
+# used for XML parsing in get_coords function
+import cgi
+# HTML escaping for the server side
 
 from google.appengine.api import users
 # [START import_ndb]
@@ -12,6 +18,7 @@ from google.appengine.ext import ndb
 # [END import_ndb]
 
 import jinja2
+# template engine
 import webapp2
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
@@ -21,7 +28,10 @@ jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
 DEFAULT_COMMENTS_NAME = 'default_comments'
 comments_key = ndb.Key('Feedback', DEFAULT_COMMENTS_NAME)
 
+IP_URL = "https://freegeoip.net/xml/"
+
 def check_profanity(text_to_check):
+	"""Takes string as parameter and checks for obscenities."""
 	connection = urllib.urlopen("http://www.wdyl.com/profanity?q=" + text_to_check)
 	output = connection.read()
 	connection.close()
@@ -55,8 +65,8 @@ class Handler(webapp2.RequestHandler):
 	def render(self, template, **kw):
 		self.write(self.render_str(template, **kw))
 
-IP_URL = "https://freegeoip.net/xml/"
 def get_coords(ip):
+	"""Gets users ip as parameter, returns Geo Points"""
 	url = IP_URL + ip
 	content = None
 	try:
@@ -71,40 +81,46 @@ def get_coords(ip):
 			return ndb.GeoPt(lat, lon)
 
 def gmap_markers(points):
+	"""Takes list of points as parameter and returns json."""
 	markers = []
 	for p in points:
 		markers.append({'lat': p.lat, 'lng': p.lon})
 	return json.dumps(markers)
 
+def get_posts(self):
+	"""Generates comments data."""
+	comments_query = Comment.query(ancestor=comments_key).order(-Comment.date)
+	comments = comments_query.fetch(10)
+
+	user = users.get_current_user()
+	if user:
+		url = users.create_logout_url(self.request.uri)
+		url_linktext = 'Logout'
+	else:
+		url = users.create_login_url(self.request.uri)
+		url_linktext = 'Login'
+
+	points = []
+	for c in comments:
+		if c.coords:
+			points.append(c.coords)
+
+	markers = gmap_markers(points)
+
+	template_values = {
+	'user': user,
+	'comments': comments,
+	'users_prompt': "Google users please",
+	'markers': markers,
+	'url': url,
+	'url_linktext': url_linktext
+	}
+
+	return template_values
 
 class MainPage(Handler):
 	def get(self):
-		comments_query = Comment.query(ancestor=comments_key).order(-Comment.date)
-		comments = comments_query.fetch(10)
-
-		user = users.get_current_user()
-		if user:
-			url = users.create_logout_url(self.request.uri)
-			url_linktext = 'Logout'
-		else:
-			url = users.create_login_url(self.request.uri)
-			url_linktext = 'Login'
-
-		points = []
-		for c in comments:
-			if c.coords:
-				points.append(c.coords)
-
-		markers = gmap_markers(points)
-
-		template_values = {
-		'user': user,
-		'comments': comments,
-		'users_prompt': "Google users please",
-		'markers': markers,
-		'url': url,
-		'url_linktext': url_linktext
-		}
+		template_values = get_posts(self)
 
 		self.render("comments.html", template_values = template_values)
 
@@ -116,8 +132,8 @@ class MainPage(Handler):
 				identity = users.get_current_user().user_id(),
 				email = users.get_current_user().email())
 
-		comment.content = self.request.get('content')
-		comment.title = self.request.get('title')
+		comment.content = cgi.escape(self.request.get('content'))
+		comment.title = cgi.escape(self.request.get('title'))
 		coords = get_coords(self.request.remote_addr)
 
 		if comment.title and comment.content:
@@ -125,11 +141,13 @@ class MainPage(Handler):
 				msg = "No profanities please!!!"
 				title = comment.title
 				content = comment.content
-				template_values = {
+				added_values = {
 					'error': msg,
 					'title': title,
 					'content': content
 				}
+				template_values = get_posts(self)
+				template_values.update(added_values)
 				self.render('comments.html', template_values = template_values)
 
 			else:
@@ -141,7 +159,9 @@ class MainPage(Handler):
 					comment.put()
 					self.redirect('/#posts')
 		else:
-			template_values = { 'error': "Please enter title and comment!"}
+			added_values = { 'error': "Please enter title and comment!"}
+			template_values = get_posts(self)
+			template_values.update(added_values)
 			self.render('comments.html', template_values = template_values)
 
 

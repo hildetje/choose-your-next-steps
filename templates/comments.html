@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 {% block comments %}
 
-<div class="posts" id="posts">
+<div class="posts">
   <h1>A penny for your thoughts</h1>
     {% for comment in template_values.comments %}
       <div class="post-user">
@@ -28,7 +28,7 @@
     <p class="error">{{template_values.error}}</p>
     <div class="form-map">
       <div type="form">
-        <form action="/" method="post">
+        <form action="/#posts" method="post" id="posts">
           <input class="form-title" name="title" type="text"
                   placeholder="Title" value ="{{template_values.title}}">
           <br>
